@@ -1,0 +1,468 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="TAN HOME | Holiday Apartments & Greek Hospitality">
+  <title>TAN HOME | Holiday Apartments & Hospitality</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --green: #203b34;
+      --green-dark: #142a25;
+      --gold: #c5a674;
+      --cream: #f6f3eb;
+      --white: #ffffff;
+      --text: #293c35;
+      --muted: #64746c;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--cream);
+      font-family: "DM Sans", sans-serif;
+      line-height: 1.7;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .container {
+      width: min(1120px, 88%);
+      margin: auto;
+    }
+
+    header {
+      background: var(--green-dark);
+      color: white;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      border-bottom: 1px solid #ffffff20;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 80px;
+      gap: 24px;
+    }
+
+    .logo {
+      font-family: Manrope, sans-serif;
+      font-size: 23px;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      white-space: nowrap;
+    }
+
+    .logo span { color: var(--gold); }
+
+    .nav-right {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: 13px;
+    }
+
+    .nav-right a:hover { color: var(--gold); }
+
+    .language {
+      border: 1px solid #ffffff66;
+      color: white;
+      background: transparent;
+      padding: 8px 13px;
+      border-radius: 5px;
+      cursor: pointer;
+      font: inherit;
+    }
+
+    .language:hover { border-color: var(--gold); }
+
+    .hero {
+      background:
+        radial-gradient(ellipse at 78% 35%, #537167 0%, transparent 55%),
+        linear-gradient(135deg, #142a25, #2e5044);
+      min-height: 630px;
+      display: flex;
+      align-items: center;
+      color: white;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 380px;
+      height: 380px;
+      border: 1px solid #c5a67455;
+      border-radius: 50%;
+      right: -100px;
+      bottom: -140px;
+      pointer-events: none;
+    }
+
+    .eyebrow {
+      color: var(--gold);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+    }
+
+    h1, h2, h3 {
+      font-family: Manrope, sans-serif;
+      line-height: 1.25;
+    }
+
+    h1 {
+      font-size: clamp(45px, 6.5vw, 78px);
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      max-width: 800px;
+      margin: 20px 0 24px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      max-width: 560px;
+      color: #e0eae3;
+      margin-bottom: 35px;
+    }
+
+    .button {
+      display: inline-block;
+      background: var(--gold);
+      color: var(--green-dark);
+      padding: 14px 30px;
+      font-size: 13px;
+      font-weight: 700;
+      border-radius: 3px;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .button:hover {
+      background: #ead2a8;
+      transform: translateY(-2px);
+    }
+
+    section { padding: 100px 0; }
+
+    .section-label {
+      color: #947747;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+    }
+
+    .section-title {
+      font-size: clamp(30px, 4vw, 45px);
+      font-weight: 500;
+      letter-spacing: -0.035em;
+      margin: 12px 0 22px;
+    }
+
+    .intro p {
+      max-width: 760px;
+      color: var(--muted);
+      font-size: 17px;
+    }
+
+    .features {
+      background: white;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-top: 45px;
+    }
+
+    .feature {
+      background: var(--cream);
+      padding: 35px 28px;
+      border-top: 3px solid var(--gold);
+    }
+
+    .feature .number {
+      color: #a18452;
+      font-size: 13px;
+      letter-spacing: 0.1em;
+    }
+
+    .feature h3 {
+      font-size: 19px;
+      margin: 18px 0 10px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 15px;
+      margin: 0;
+    }
+
+    .properties {
+      background: #edf0eb;
+      text-align: center;
+    }
+
+    .properties p {
+      max-width: 610px;
+      margin: 0 auto;
+      color: var(--muted);
+    }
+
+    .coming-soon {
+      margin: 35px auto 0;
+      max-width: 650px;
+      padding: 45px 25px;
+      border: 1px solid #b5c2b9;
+      color: var(--green);
+      letter-spacing: 0.14em;
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .contact {
+      background: var(--green);
+      color: white;
+      text-align: center;
+    }
+
+    .contact .section-title { color: white; }
+
+    .contact p {
+      color: #d8e4dc;
+      margin: 0 auto 28px;
+      max-width: 590px;
+    }
+
+    footer {
+      background: var(--green-dark);
+      color: #b9c9bd;
+      padding: 35px 0;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    footer strong {
+      color: var(--gold);
+      letter-spacing: 0.12em;
+    }
+
+    .legal {
+      margin-top: 8px;
+      font-size: 11px;
+      opacity: 0.8;
+    }
+
+    @media (max-width: 700px) {
+      .nav { min-height: 70px; }
+      .logo { font-size: 18px; }
+      .nav-right { gap: 12px; }
+      .nav-right .nav-link { display: none; }
+      .hero { min-height: 550px; }
+      .hero p { font-size: 16px; }
+      section { padding: 70px 0; }
+      .feature-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home">TAN<span> HOME</span></a>
+
+    <div class="nav-right">
+      <a class="nav-link" href="#about" data-en="About" data-el="Σχετικά">About</a>
+      <a class="nav-link" href="#apartments" data-en="Apartments" data-el="Διαμερίσματα">Apartments</a>
+      <a class="nav-link" href="#contact" data-en="Contact" data-el="Επικοινωνία">Contact</a>
+      <button class="language" id="languageButton" type="button" aria-label="Change language">ΕΛ</button>
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <div class="hero" id="home">
+    <div class="container">
+      <div class="eyebrow" data-en="Welcome to TAN HOME" data-el="Καλώς ήρθατε στην TAN HOME">
+        Welcome to TAN HOME
+      </div>
+
+      <h1 data-en="A place to feel at home." data-el="Ένας τόπος να νιώθεις σαν στο σπίτι σου.">
+        A place to feel at home.
+      </h1>
+
+      <p data-en="Discover a welcoming approach to apartment stays, inspired by the warmth and simplicity of Greek hospitality."
+         data-el="Ανακαλύψτε μια φιλόξενη προσέγγιση στη διαμονή, εμπνευσμένη από τη ζεστασιά και την απλότητα της ελληνικής φιλοξενίας.">
+        Discover a welcoming approach to apartment stays, inspired by the warmth and simplicity of Greek hospitality.
+      </p>
+
+      <a href="#about" class="button" data-en="DISCOVER TAN HOME" data-el="ΓΝΩΡΙΣΤΕ ΜΑΣ">
+        DISCOVER TAN HOME
+      </a>
+    </div>
+  </div>
+
+  <section class="intro" id="about">
+    <div class="container">
+      <div class="section-label" data-en="OUR PHILOSOPHY" data-el="Η ΦΙΛΟΣΟΦΙΑ ΜΑΣ">OUR PHILOSOPHY</div>
+
+      <h2 class="section-title" data-en="Hospitality starts with a feeling."
+          data-el="Η φιλοξενία ξεκινά από ένα συναίσθημα.">
+        Hospitality starts with a feeling.
+      </h2>
+
+      <p data-en="At TAN HOME, we believe that a comfortable stay is about more than accommodation. It's about feeling welcome, relaxed and connected to the place you visit. Our vision is to bring together thoughtfully presented apartments and genuine hospitality."
+         data-el="Στην TAN HOME πιστεύουμε ότι η άνετη διαμονή είναι κάτι περισσότερο από ένα κατάλυμα. Είναι η αίσθηση της φιλοξενίας, της χαλάρωσης και της σύνδεσης με τον τόπο που επισκέπτεστε. Στόχος μας είναι να συνδυάζουμε προσεγμένα διαμερίσματα με αυθεντική φιλοξενία.">
+        At TAN HOME, we believe that a comfortable stay is about more than accommodation. It's about feeling welcome, relaxed and connected to the place you visit. Our vision is to bring together thoughtfully presented apartments and genuine hospitality.
+      </p>
+    </div>
+  </section>
+
+  <section class="features">
+    <div class="container">
+      <div class="section-label" data-en="THE TAN HOME EXPERIENCE" data-el="Η ΕΜΠΕΙΡΙΑ TAN HOME">
+        THE TAN HOME EXPERIENCE
+      </div>
+
+      <h2 class="section-title" data-en="Simple comforts. Memorable stays."
+          data-el="Απλές ανέσεις. Όμορφες διαμονές.">
+        Simple comforts. Memorable stays.
+      </h2>
+
+      <div class="feature-grid">
+        <div class="feature">
+          <div class="number">01</div>
+          <h3 data-en="Comfort" data-el="Άνεση">Comfort</h3>
+          <p data-en="A welcoming environment where guests can feel at ease."
+             data-el="Ένα φιλόξενο περιβάλλον όπου οι επισκέπτες μπορούν να αισθάνονται άνετα.">
+            A welcoming environment where guests can feel at ease.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="number">02</div>
+          <h3 data-en="Authenticity" data-el="Αυθεντικότητα">Authenticity</h3>
+          <p data-en="A hospitality philosophy inspired by the Greek way of life."
+             data-el="Μια φιλοσοφία φιλοξενίας εμπνευσμένη από τον ελληνικό τρόπο ζωής.">
+            A hospitality philosophy inspired by the Greek way of life.
+          </p>
+        </div>
+
+        <div class="feature">
+          <div class="number">03</div>
+          <h3 data-en="Care" data-el="Φροντίδα">Care</h3>
+          <p data-en="Attention to the details that make every stay more enjoyable."
+             data-el="Προσοχή στις λεπτομέρειες που κάνουν κάθε διαμονή πιο ευχάριστη.">
+            Attention to the details that make every stay more enjoyable.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="properties" id="apartments">
+    <div class="container">
+      <div class="section-label" data-en="OUR APARTMENTS" data-el="ΤΑ ΔΙΑΜΕΡΙΣΜΑΤΑ ΜΑΣ">
+        OUR APARTMENTS
+      </div>
+
+      <h2 class="section-title" data-en="Find your place."
+          data-el="Βρείτε τον δικό σας χώρο.">
+        Find your place.
+      </h2>
+
+      <p data-en="We are preparing this section to introduce our apartment collection. Property details and booking information will be available here soon."
+         data-el="Προετοιμάζουμε αυτή την ενότητα για να σας παρουσιάσουμε τα διαμερίσματά μας. Σύντομα θα είναι διαθέσιμες πληροφορίες και στοιχεία κρατήσεων.">
+        We are preparing this section to introduce our apartment collection. Property details and booking information will be available here soon.
+      </p>
+
+      <div class="coming-soon" data-en="APARTMENTS COMING SOON"
+           data-el="ΣΥΝΤΟΜΑ ΤΑ ΔΙΑΜΕΡΙΣΜΑΤΑ ΜΑΣ">
+        APARTMENTS COMING SOON
+      </div>
+    </div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div class="container">
+      <div class="section-label" data-en="GET IN TOUCH" data-el="ΕΠΙΚΟΙΝΩΝΗΣΤΕ ΜΑΖΙ ΜΑΣ">
+        GET IN TOUCH
+      </div>
+
+      <h2 class="section-title" data-en="We'd love to hear from you."
+          data-el="Θα χαρούμε να επικοινωνήσουμε μαζί σας.">
+        We'd love to hear from you.
+      </h2>
+
+      <p data-en="For information about TAN HOME and upcoming accommodation options, feel free to get in touch."
+         data-el="Για πληροφορίες σχετικά με την TAN HOME και τις μελλοντικές επιλογές διαμονής, επικοινωνήστε μαζί μας.">
+        For information about TAN HOME and upcoming accommodation options, feel free to get in touch.
+      </p>
+
+      <a class="button" href="mailto:a.margelis@messiniaki.gr?subject=TAN%20HOME%20Enquiry"
+         data-en="SEND AN EMAIL" data-el="ΣΤΕΙΛΤΕ EMAIL">
+        SEND AN EMAIL
+      </a>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <strong>TAN HOME</strong>
+    <div data-en="Holiday Apartments & Hospitality"
+         data-el="Διαμερίσματα & Φιλοξενία">
+      Holiday Apartments & Hospitality
+    </div>
+    <div class="legal">
+      © <span id="year"></span> TAN HOME. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<script>
+  const languageButton = document.getElementById("languageButton");
+  let currentLanguage = "en";
+
+  function setLanguage(lang) {
+    currentLanguage = lang;
+    document.documentElement.lang = lang;
+
+    document.querySelectorAll("[data-en][data-el]").forEach(element => {
+      element.textContent = element.getAttribute("data-" + lang);
+    });
+
+    languageButton.textContent = lang === "en" ? "ΕΛ" : "EN";
+    document.title = lang === "en"
+      ? "TAN HOME | Holiday Apartments & Hospitality"
+      : "TAN HOME | Διαμερίσματα & Φιλοξενία";
+  }
+
+  languageButton.addEventListener("click", () => {
+    setLanguage(currentLanguage === "en" ? "el" : "en");
+  });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
