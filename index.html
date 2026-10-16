@@ -433,6 +433,24 @@
          data-el="Διαμερίσματα & Φιλοξενία">
       Holiday Apartments & Hospitality
     </div>
+
+    <div class="company-details" style="margin-top:22px;line-height:1.9;font-size:12px;">
+      <div data-en="MARGELIS ATHANASIOS SINGLE MEMBER P.C."
+           data-el="ΜΑΡΓΕΛΗΣ ΑΘΑΝΑΣΙΟΣ ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.">
+        MARGELIS ATHANASIOS SINGLE MEMBER P.C.
+      </div>
+      <div data-en="G.E.MI.: 186731245000 | VAT: EL 802982850"
+           data-el="ΓΕΜΗ: 186731245000 | ΑΦΜ: 802982850">
+        G.E.MI.: 186731245000 | VAT: EL 802982850
+      </div>
+      <a id="companyInfoLink" href="legal.html?lang=en"
+         data-en="Company Information"
+         data-el="Εταιρικά Στοιχεία"
+         style="display:inline-block;margin-top:10px;color:#c5a674;text-decoration:underline;">
+        Company Information
+      </a>
+    </div>
+
     <div class="legal">
       © <span id="year"></span> TAN HOME. All rights reserved.
     </div>
@@ -452,6 +470,7 @@
     });
 
     languageButton.textContent = lang === "en" ? "ΕΛ" : "EN";
+    document.getElementById("companyInfoLink").href = "legal.html?lang=" + lang;
     document.title = lang === "en"
       ? "TAN HOME | Holiday Apartments & Hospitality"
       : "TAN HOME | Διαμερίσματα & Φιλοξενία";
