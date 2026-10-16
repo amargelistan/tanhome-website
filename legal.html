@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="el">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="Εταιρικά στοιχεία και πληροφορίες ΓΕΜΗ της TAN HOME.">
+  <title>Εταιρικά Στοιχεία | TAN HOME</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root{--green:#203b34;--dark:#142a25;--gold:#c5a674;--cream:#f6f3eb;--text:#293c35;--muted:#64746c}
+    *{box-sizing:border-box}body{margin:0;background:var(--cream);color:var(--text);font:16px/1.7 'DM Sans',sans-serif}
+    header{background:var(--dark);color:#fff} .bar{width:min(1080px,88%);min-height:80px;margin:auto;display:flex;align-items:center;justify-content:space-between;gap:20px}
+    .logo{font-family:Manrope,sans-serif;letter-spacing:.15em;font-size:22px;font-weight:800;color:white;text-decoration:none}.logo span{color:var(--gold)}
+    button{border:1px solid #ffffff66;background:transparent;color:white;padding:8px 14px;border-radius:5px;cursor:pointer;font:inherit}
+    main{width:min(850px,88%);margin:72px auto 100px}.eyebrow{font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:#947747;font-weight:700}
+    h1{font:500 clamp(30px,5vw,45px)/1.25 Manrope,sans-serif;margin:13px 0 32px}
+    .panel{background:white;border-top:4px solid var(--gold);padding:32px 40px;box-shadow:0 8px 28px #142a2510}
+    .name{font:600 clamp(17px,3vw,21px)/1.5 Manrope,sans-serif;color:var(--green);margin:0 0 24px}
+    dl{margin:0}.field{display:grid;grid-template-columns:minmax(175px,35%) 1fr;gap:15px;padding:15px 0;border-bottom:1px solid #e6e8e4}
+    .field:last-child{border:0}dt{font-weight:600;color:var(--muted)}dd{margin:0;overflow-wrap:anywhere}
+    .back{display:inline-block;margin-top:32px;color:var(--green);font-weight:700;text-decoration:none}
+    footer{background:var(--dark);text-align:center;color:#cfdbd2;padding:30px 20px;font-size:12px}
+    [data-lang]{display:none}[data-lang].visible{display:block}
+    @media(max-width:600px){main{margin:45px auto 65px}.panel{padding:22px}.field{grid-template-columns:1fr;gap:2px}}
+  </style>
+</head>
+<body>
+<header><div class="bar"><a class="logo" href="index.html">TAN<span> HOME</span></a><button id="languageButton" type="button" aria-label="Change language">EN</button></div></header>
+<main>
+  <section data-lang="el">
+    <div class="eyebrow">Νομικές πληροφορίες</div>
+    <h1>Εταιρικά Στοιχεία</h1>
+    <div class="panel">
+      <p class="name">ΜΑΡΓΕΛΗΣ ΑΘΑΝΑΣΙΟΣ ΜΟΝΟΠΡΟΣΩΠΗ Ι.Κ.Ε.</p>
+      <dl>
+        <div class="field"><dt>Αριθμός ΓΕΜΗ</dt><dd>186731245000</dd></div>
+        <div class="field"><dt>ΑΦΜ</dt><dd>802982850</dd></div>
+        <div class="field"><dt>Ημερομηνία σύστασης</dt><dd>29/08/2025</dd></div>
+        <div class="field"><dt>Νομική μορφή</dt><dd>ΙΚΕ</dd></div>
+        <div class="field"><dt>Κατάσταση</dt><dd>Ενεργή από 29/08/2025</dd></div>
+        <div class="field"><dt>Διεύθυνση</dt><dd>Φιλελλήνων 27, Τ.Κ. 24100, Καλαμάτα</dd></div>
+      </dl>
+    </div>
+    <a class="back" href="index.html">← Επιστροφή στην αρχική</a>
+  </section>
+  <section data-lang="en">
+    <div class="eyebrow">Legal information</div>
+    <h1>Company Information</h1>
+    <div class="panel">
+      <p class="name">MARGELIS ATHANASIOS SINGLE MEMBER P.C.</p>
+      <dl>
+        <div class="field"><dt>VAT number</dt><dd>EL 802982850</dd></div>
+        <div class="field"><dt>European Unique Identifier (EUID)</dt><dd>ELGEMI.186731245000</dd></div>
+        <div class="field"><dt>Date of incorporation</dt><dd>29 August 2025</dd></div>
+        <div class="field"><dt>Legal form</dt><dd>Private Company (P.C.)</dd></div>
+        <div class="field"><dt>Status</dt><dd>Active since 29 August 2025</dd></div>
+        <div class="field"><dt>Registered address</dt><dd>27 Filellinon Street, 24100 Kalamata, Greece</dd></div>
+      </dl>
+    </div>
+    <a class="back" href="index.html">← Back to homepage</a>
+  </section>
+</main>
+<footer>© <span id="year"></span> TAN HOME. All rights reserved.</footer>
+<script>
+  const params=new URLSearchParams(location.search);
+  let language=params.get('lang')==='en'?'en':params.get('lang')==='el'?'el':(localStorage.getItem('tanhome-language')==='en'?'en':'el');
+  function setLanguage(lang){
+    language=lang;document.documentElement.lang=lang;
+    document.querySelectorAll('[data-lang]').forEach(el=>el.classList.toggle('visible',el.dataset.lang===lang));
+    document.getElementById('languageButton').textContent=lang==='el'?'EN':'ΕΛ';
+    document.title=lang==='el'?'Εταιρικά Στοιχεία | TAN HOME':'Company Information | TAN HOME';
+    try{localStorage.setItem('tanhome-language',lang)}catch(e){}
+  }
+  document.getElementById('languageButton').addEventListener('click',()=>setLanguage(language==='el'?'en':'el'));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  setLanguage(language);
+</script>
+</body>
+</html>
